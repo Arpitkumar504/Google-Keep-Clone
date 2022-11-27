@@ -126,9 +126,3 @@ textarea {
     align-items: center;
     justify-content: end;
 }
-
-@media(max-width:576px){
-    .notesbox{
-        overflow-y: visible;
-    }
-}
