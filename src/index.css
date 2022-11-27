@@ -1,13 +1,128 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:wght@700&family=Pacifico&family=Poppins:wght@300&display=swap');
+
+:root {
+    --first: 'Pacifico', cursive;
+    --second: 'Poppins', sans-serif;
+    --third: 'Lobster Two', cursive;
+    --lightmodeback: white;
+    --lightmodecolor: #1d1d1d;
+    --footergradiant: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--second);
+}
+
+body {
+    position: relative;
+    /* height: 5000px; */
+}
+
+/* keep */
+.header {
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    background-color: #f3f3f3;
+}
+
+.header h1 {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.notecontent {
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    background-color: #f3f3f3;
+    margin: 15px auto;
+}
+
+.notecontent .note input {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    background-color: #f3f3f3;
+    font-size: 25px;
+    font-weight: bold;
+    outline: none;
+}
+
+textarea {
+    width: 100%;
+    padding: 5px;
+    height: 130px;
+    border: none;
+    outline: none;
+    resize: none;
+    background-color: #f3f3f3;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.notetext {
+    font-size: 25px;
+}
+
+.notecontent .button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.notebtn {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1d1d1d;
+    color: #f3f3f3;
+    cursor: pointer;
+}
+
+.notegroup {
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    background-color: #f3f3f3;
+    margin: 15px;
+}
+
+.notegroup h1 {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.notegroup h5 {
+    font-size: 25px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.notesbox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 300px;
+    overflow-y: scroll;
+}
+
+.notegroup .content {
+    height: 130px;
+}
+
+.notegroup .button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
 }
