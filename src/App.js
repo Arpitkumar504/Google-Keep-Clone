@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Headerkeep from './component/Headerkeep.js'
 import Notes from './component/Notes.js'
 import Notegroup from './component/Notegroup.js'
+import Footer from './component/Footer.js'
 
 const App= () => {
     const [alldata, setalldata] = useState([]);
@@ -36,6 +37,7 @@ const App= () => {
                     })
                 }
             </div>
+            <Footer/>
         </div>
     )
 }

@@ -112,7 +112,7 @@ textarea {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    height: 300px;
+    height: 500px;
     overflow-y: scroll;
 }
 
@@ -125,4 +125,41 @@ textarea {
     display: flex;
     align-items: center;
     justify-content: end;
+}
+
+/* Footer section */
+.footer {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: bold;
+    background-color: #1d1d1d;
+    color: #f3f3f3;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.footer h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+@media(max-width:576px) {
+    .header h1 {
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+    }
+
+    .notesbox {
+        display: flex;
+        justify-content: start;
+        flex-direction: column;
+        height: auto;
+    }
 }
