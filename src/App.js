@@ -10,9 +10,9 @@ const App = () => {
     const addnote = (note) => {
         if ((note.name !== "") && (note.texts !== "")) {
             setalldata([...alldata, note]);
+            data++
+            setdata(data);
         }
-        data++
-        setdata(data);
     }
     const deletenote = (indexs) => {
         const update = alldata.filter((element, index) => {
