@@ -1,12 +1,31 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Headerkeep from './component/Headerkeep.js'
 import Notes from './component/Notes.js'
 import Notegroup from './component/Notegroup.js'
 import Footer from './component/Footer.js'
 
+
+const getlocalstorage = () => {
+    let lists = localStorage.getItem('list');
+    if (lists) {
+        return JSON.parse(localStorage.getItem('list'));
+    }
+    else {
+        return [];
+    }
+}
+const getlocalcheck = () => {
+    let datas = localStorage.getItem('item');
+    if (datas) {
+        return JSON.parse(localStorage.getItem('item'));
+    }
+    else {
+        return 0;
+    }
+}
 const App = () => {
-    const [alldata, setalldata] = useState([]);
-    let [data, setdata] = useState(0);
+    const [alldata, setalldata] = useState(getlocalstorage());
+    let [data, setdata] = useState(getlocalcheck());
     const addnote = (note) => {
         if ((note.name !== "") && (note.texts !== "")) {
             setalldata([...alldata, note]);
@@ -22,12 +41,21 @@ const App = () => {
         data--;
         setdata(data);
     }
+    const deleteall = () => {
+        setalldata([]);
+    }
+    useEffect(() => {
+        localStorage.setItem('list', JSON.stringify(alldata));
+    }, [alldata])
+    useEffect(() => {
+        localStorage.setItem('item', JSON.stringify(data));
+    }, [data])
     return (
         <div >
             <Headerkeep name="Arpit Keep" />
-            <Notes passnote={addnote} />
+            <Notes passnote={addnote} cleardata={deleteall} />
             <div className="notesbox">
-                {data == 0 ?
+                {data === 0 ?
                     <div className="notesmsg"><p>When You Create Notes It Will Shown Here</p></div> :
                     alldata.map((element, index) => {
                         return (
